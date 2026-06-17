@@ -57,6 +57,8 @@
   box-shadow: inset 0 -3px 0 0 var(--color-accent);
 }
 
+.primary-nav__cta { display: none; }  /* mobile-only CTA at the bottom of the open menu */
+
 .header-cta { display: flex; align-items: center; gap: var(--space-2xs); }
 .header-phone {
   display: inline-flex;
@@ -589,6 +591,17 @@
   .site-header__inner { flex-wrap: wrap; }
   .primary-nav__list { flex-direction: column; align-items: stretch; gap: 0.25rem; padding-block: var(--space-s); }
   .primary-nav__list a { padding: 0.7em 0.5em; }
+  /* CTA pinned to the bottom of the open mobile menu */
+  .primary-nav__cta { display: block; margin-top: var(--space-2xs); padding-top: var(--space-s); border-top: 1px solid var(--color-line); }
+  .primary-nav__cta a.btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 0.85em 1em;
+    color: var(--color-on-accent);
+    background: var(--color-accent);
+  }
+  .primary-nav__cta a.btn:hover { color: var(--color-on-accent); background: var(--color-accent-ink); }
   .header-phone .header-phone__label { display: none; }
   .bento { grid-template-columns: 1fr; }
   .card, .card--wide, .card--feature { grid-column: auto; }
