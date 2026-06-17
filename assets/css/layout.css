@@ -575,6 +575,10 @@
 /* --- Responsive: mobile menu ---------------------------------------------- */
 @media (max-width: 52rem) {
   .nav-toggle { display: inline-flex; order: 3; }
+  /* top bar = brand (left) · phone (tap-to-call) · hamburger (right) */
+  .brand { margin-inline-end: auto; }
+  .header-cta { order: 2; }
+  .header-cta .btn--primary { display: none; }   /* big CTA redundant on mobile; keep tap-to-call */
   .primary-nav {
     order: 4;
     flex-basis: 100%;
