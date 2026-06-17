@@ -1,0 +1,4 @@
+# Dev dependencies for the static BTF site test suite.
+# Tests parse the static HTML with the Python stdlib (html.parser) and read
+# CSS/XML as text — no third-party HTML library is used.
+pytest==9.1.0

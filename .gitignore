@@ -1,0 +1,14 @@
+.idea
+venv
+.venv
+install
+*.pyc
+__pycache__/
+.pytest_cache/
+logs/*
+.DS_Store
+
+# local QA artifacts
+.playwright-mcp/
+btf-*.png
+final-*.png

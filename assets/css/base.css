@@ -1,0 +1,152 @@
+/* ==========================================================================
+   BTF base/reset + global primitives. Builds on tokens.css.
+   ========================================================================== */
+
+/* --- Modern reset ---------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html:focus-within { scroll-behavior: smooth; }
+
+body {
+  min-height: 100svh;
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: var(--leading);
+  color: var(--color-ink);
+  background: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, picture, svg, iframe { display: block; max-width: 100%; }
+img { height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  text-wrap: balance;
+}
+h1 { font-weight: 900; }
+p { text-wrap: pretty; }
+
+a { color: var(--color-accent-ink); text-decoration-thickness: 0.08em; text-underline-offset: 0.15em; }
+a:hover { color: var(--color-ink); }
+
+ul, ol { padding: 0; }
+
+/* --- Focus visibility (accessibility) ------------------------------------- */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* --- Layout primitives ----------------------------------------------------- */
+.container {
+  width: min(100% - 2 * var(--space-m), var(--container));
+  margin-inline: auto;
+}
+
+.section { padding-block: var(--space-2xl); }
+.section--alt { background: var(--color-surface-2); }
+
+/* "Safety tag" eyebrow — reads like a sign label, coded by colour.
+   Default = ppoż. red; --evac = ewakuacja green; --caution = ostrzeżenie amber. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-ink);
+}
+.eyebrow::before {
+  content: "";
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 2px;
+  background: currentColor;
+  box-shadow: 0 0 0 0.18em color-mix(in srgb, currentColor 18%, transparent);
+}
+.eyebrow--evac { color: var(--color-evac-ink); }
+.eyebrow--caution { color: var(--color-caution-ink); }
+.eyebrow--on-carbon { color: var(--color-on-carbon-2); }
+
+/* --- Buttons / CTAs -------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.78em 1.4em;
+  border-radius: var(--radius-m);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--color-accent) 32%, transparent);
+}
+.btn--primary:hover { background: var(--color-accent-ink); color: var(--color-on-accent); }
+.btn--ghost { border-color: var(--color-line); color: var(--color-ink); background: var(--color-surface); }
+.btn--ghost:hover { border-color: var(--color-ink); color: var(--color-ink); }
+/* CTAs sitting on the dark carbon band */
+.btn--on-carbon { border-color: color-mix(in srgb, var(--color-on-carbon) 28%, transparent); color: var(--color-on-carbon); }
+.btn--on-carbon:hover { border-color: var(--color-on-carbon); color: var(--color-on-carbon); background: color-mix(in srgb, var(--color-on-carbon) 8%, transparent); }
+.btn .btn__ico { width: 1.1em; height: 1.1em; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-s);
+  top: -3rem;
+  background: var(--color-ink);
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: var(--radius-s);
+  z-index: 1000;
+  transition: top 160ms ease;
+}
+.skip-link:focus { top: var(--space-s); color: #fff; }
+
+/* --- Cross-document view transitions (progressive enhancement) ------------- */
+@view-transition {
+  navigation: auto;
+}
+
+/* --- Reduced motion: neutralize all motion globally ------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
