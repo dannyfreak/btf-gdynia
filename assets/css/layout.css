@@ -316,6 +316,7 @@
   display: inline-flex;
   width: 3rem; height: 3rem;
   align-items: center; justify-content: center;
+  vertical-align: middle;
   border-radius: var(--radius-m);
   background: color-mix(in srgb, var(--color-accent) 12%, var(--color-surface));
   color: var(--color-accent);
@@ -329,12 +330,13 @@
 .card p { color: var(--color-ink-2); margin-top: var(--space-2xs); }
 .card__tag {
   display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.25rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-ink-3);
-  margin-bottom: var(--space-2xs);
 }
 
 /* --- Dark "carbon" band: why us + how we start ----------------------------- */
