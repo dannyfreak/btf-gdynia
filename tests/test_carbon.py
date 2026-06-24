@@ -336,6 +336,9 @@ def test_theme_bootstrap_before_css(page):
     assert src.index("btf-theme") < src.index("assets/css/carbon.css"), (
         f"{page}: theme bootstrap must run before carbon.css (no FOUC)"
     )
+    assert "prefers-color-scheme" in src, (
+        f"{page}: bootstrap must follow system theme when no explicit choice"
+    )
 
 
 @pytest.mark.parametrize("page", ALL)
@@ -350,6 +353,7 @@ def test_light_theme_and_toggle_defined():
     assert ".theme-toggle" in css, "carbon.css: theme-toggle styles"
     js = read_text("assets/js/carbon-nav.js")
     assert "theme-toggle" in js and "btf-theme" in js, "carbon-nav.js: injects theme toggle"
+    assert "prefers-color-scheme" in js, "carbon-nav.js: follows live system theme changes"
 
 
 # --- Internal link / asset integrity ----------------------------------------

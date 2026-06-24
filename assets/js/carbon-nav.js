@@ -52,5 +52,17 @@
     });
     var navr = document.querySelector('.nav-r');
     if (navr) { navr.insertBefore(btn, navr.firstChild); sync(); }
+
+    // Follow OS/browser theme changes live — but only until the user picks one.
+    if (window.matchMedia) {
+      var mq = matchMedia('(prefers-color-scheme: dark)');
+      var onSys = function (e) {
+        try { if (localStorage.getItem('btf-theme')) return; } catch (err) {}
+        if (e.matches) { delete root.dataset.theme; } else { root.dataset.theme = 'light'; }
+        sync();
+      };
+      if (mq.addEventListener) mq.addEventListener('change', onSys);
+      else if (mq.addListener) mq.addListener(onSys);
+    }
   })();
 })();
