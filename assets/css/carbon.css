@@ -1,6 +1,7 @@
 /* ===========================================================================
    BTF — "Carbon" — wspólny arkusz stylów dla całej witryny.
    Ciemny, kinowy kierunek: węgiel + kość, kondensowany Oswald, etykiety mono.
+   Jasny motyw przez :root[data-theme="light"] (przełącznik w nagłówku).
    =========================================================================== */
 /* Web fonts (Google Fonts) are injected by assets/js/consent.js ONLY after the
    user accepts cookies/third-party content. Fallback system fonts before that. */
@@ -14,8 +15,25 @@
   --sans:"IBM Plex Sans",system-ui,sans-serif;
   --accent:#E5392B;        /* ppoż. red — akcent sygnałowy na ciemnym tle */
   --accent-2:#ff5947;      /* jaśniejszy wariant na hover/tekst */
+  /* nakładki na zdjęcia (zmienne, by przełączać motyw) */
+  --banner-top:rgba(13,15,18,.5); --banner-bot:rgba(13,15,18,.65);
+  --cap-bg:rgba(13,15,18,.55);
+  --hero-grad:linear-gradient(100deg,rgba(13,15,18,.94) 0%,rgba(13,15,18,.78) 34%,rgba(13,15,18,.28) 62%,rgba(13,15,18,.55) 100%);
+  --hero-fade:linear-gradient(transparent 60%,rgba(13,15,18,.9));
   --wrap:1220px;
 }
+/* ---- Jasny motyw (przełącznik w nagłówku) ---- */
+:root[data-theme="light"]{
+  --bg:#f4f5f7; --bg-2:#eaecef; --panel:#ffffff; --raise:#ffffff;
+  --bone:#16191d; --bone-2:#4b535b; --bone-3:#7c858e;
+  --line:#e0e4e8; --line-2:#ccd2d8;
+  --accent:#D7261E; --accent-2:#b51c15;
+  --banner-top:rgba(244,245,247,.12); --banner-bot:rgba(244,245,247,.38);
+  --cap-bg:rgba(255,255,255,.74);
+  --hero-grad:linear-gradient(100deg,rgba(244,245,247,.95) 0%,rgba(244,245,247,.8) 34%,rgba(244,245,247,.28) 62%,rgba(244,245,247,.58) 100%);
+  --hero-fade:linear-gradient(transparent 55%,rgba(244,245,247,.94));
+}
+:root[data-theme="light"] body{ -webkit-font-smoothing:auto; }
 ::selection{background:var(--accent);color:#fff}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -49,8 +67,12 @@ header.site.solid,header.site.always{background:color-mix(in srgb,var(--bg) 82%,
 .btn--ghost:hover{background:var(--bone);color:var(--bg)}
 .btn--sm{padding:11px 18px}
 .navtoggle{display:none;background:none;border:1px solid var(--line-2);color:var(--bone);width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer}
+.theme-toggle{background:none;border:1px solid var(--line-2);color:var(--bone-2);width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s;flex:none}
+.theme-toggle:hover{color:var(--bone);border-color:var(--bone-3)}
+.theme-toggle svg{width:18px;height:18px}
 @media(max-width:940px){
   .nav nav,.nav .phone{display:none}
+  .nav-r .btn--sm{display:none}        /* header CTA lives in the mobile menu */
   .navtoggle{display:inline-flex}
   .mobile-nav{position:fixed;inset:78px 0 auto 0;background:var(--bg-2);border-bottom:1px solid var(--line);z-index:49;transform:translateY(-12px);opacity:0;pointer-events:none;transition:.22s}
   .mobile-nav.open{transform:none;opacity:1;pointer-events:auto}
@@ -84,8 +106,8 @@ section{position:relative}
 .banner{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:var(--bg-2)}
 .banner img{width:100%;height:clamp(280px,42vw,520px);object-fit:cover;display:block}
 .banner.slim img{height:clamp(200px,26vw,320px)}
-.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,15,18,.5),transparent 30%,transparent 70%,rgba(13,15,18,.65));pointer-events:none}
-.banner figcaption{position:absolute;left:38px;bottom:24px;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-2);background:rgba(13,15,18,.55);backdrop-filter:blur(6px);padding:8px 13px;border:1px solid var(--line-2);max-width:70%}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--banner-top),transparent 30%,transparent 70%,var(--banner-bot));pointer-events:none}
+.banner figcaption{position:absolute;left:38px;bottom:24px;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-2);background:var(--cap-bg);backdrop-filter:blur(6px);padding:8px 13px;border:1px solid var(--line-2);max-width:70%}
 
 /* ---- Cards grid (services / why) ---- */
 .cards{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}

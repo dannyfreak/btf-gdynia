@@ -328,6 +328,24 @@ def test_favicon_resolves(page):
     assert (REPO_ROOT / icons[0].attrs.get("href")).exists(), f"{page}: favicon file exists"
 
 
+# --- Theme toggle (dark / light) --------------------------------------------
+@pytest.mark.parametrize("page", ALL)
+def test_theme_bootstrap_before_css(page):
+    src = read_text(page)
+    assert "btf-theme" in src, f"{page}: theme bootstrap script present"
+    assert src.index("btf-theme") < src.index("assets/css/carbon.css"), (
+        f"{page}: theme bootstrap must run before carbon.css (no FOUC)"
+    )
+
+
+def test_light_theme_and_toggle_defined():
+    css = read_text("assets/css/carbon.css")
+    assert '[data-theme="light"]' in css, "carbon.css: light theme block"
+    assert ".theme-toggle" in css, "carbon.css: theme-toggle styles"
+    js = read_text("assets/js/carbon-nav.js")
+    assert "theme-toggle" in js and "btf-theme" in js, "carbon-nav.js: injects theme toggle"
+
+
 # --- Internal link / asset integrity ----------------------------------------
 @pytest.mark.parametrize("page", ALL)
 def test_no_broken_internal_links(page):
