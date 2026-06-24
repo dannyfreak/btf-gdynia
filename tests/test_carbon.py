@@ -338,6 +338,12 @@ def test_theme_bootstrap_before_css(page):
     )
 
 
+@pytest.mark.parametrize("page", ALL)
+def test_light_is_default(page):
+    html = parse(page).find("html")
+    assert html.attrs.get("data-theme") == "light", f"{page}: light must be the default theme"
+
+
 def test_light_theme_and_toggle_defined():
     css = read_text("assets/css/carbon.css")
     assert '[data-theme="light"]' in css, "carbon.css: light theme block"
