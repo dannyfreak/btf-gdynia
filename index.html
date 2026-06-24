@@ -1,285 +1,211 @@
 <!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BTF — Bezpieczeństwo Twojej Firmy | ochrona ppoż. i BHP, Trójmiasto</title>
-  <meta name="description" content="Bezpieczeństwo Twojej Firmy — Kamil Skamarski. Ochrona przeciwpożarowa i BHP w Gdyni i całym Trójmieście: instrukcje, przeglądy gaśnic, szkolenia. Pierwszy przegląd ppoż. bezpłatnie.">
-  <link rel="canonical" href="https://btf-gdynia.pl/">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="BTF — Bezpieczeństwo Twojej Firmy">
-  <meta property="og:description" content="Ochrona przeciwpożarowa i BHP w Trójmieście. Pierwszy przegląd ppoż. bezpłatnie.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://btf-gdynia.pl/">
-  <meta property="og:image" content="assets/img/og-default.jpg">
-  <link rel="stylesheet" href="assets/css/tokens.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Bezpieczeństwo Twojej Firmy — Kamil Skamarski",
-    "description": "Ochrona przeciwpożarowa (ppoż.) i BHP dla firm w Gdyni i Trójmieście.",
-    "url": "https://btf-gdynia.pl/",
-    "telephone": "+48504093624",
-    "email": "kamilskamarski@gmail.com",
-    "image": "https://btf-gdynia.pl/assets/img/og-default.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "ul. Kaczewska 22B/8",
-      "postalCode": "81-476",
-      "addressLocality": "Gdynia",
-      "addressCountry": "PL"
-    },
-    "areaServed": "Trójmiasto",
-    "vatID": "874-160-03-93"
-  }
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BTF — Bezpieczeństwo Twojej Firmy | ochrona ppoż. i BHP, Trójmiasto</title>
+<meta name="description" content="Bezpieczeństwo Twojej Firmy — Kamil Skamarski. Ochrona przeciwpożarowa i BHP w Gdyni i całym Trójmieście: instrukcje, przeglądy gaśnic, szkolenia. Pierwszy przegląd ppoż. bezpłatnie.">
+<link rel="canonical" href="https://btf-gdynia.pl/">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="BTF — Bezpieczeństwo Twojej Firmy">
+<meta property="og:description" content="Ochrona przeciwpożarowa i BHP w Trójmieście. Pierwszy przegląd ppoż. bezpłatnie.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://btf-gdynia.pl/">
+<meta property="og:image" content="assets/img/og-default.jpg">
+<link rel="stylesheet" href="assets/css/carbon.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Bezpieczeństwo Twojej Firmy — Kamil Skamarski",
+  "description": "Ochrona przeciwpożarowa (ppoż.) i BHP dla firm w Gdyni i Trójmieście.",
+  "url": "https://btf-gdynia.pl/",
+  "telephone": "+48504093624",
+  "email": "kamilskamarski@gmail.com",
+  "image": "https://btf-gdynia.pl/assets/img/og-default.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ul. Kaczewska 22B/8",
+    "postalCode": "81-476",
+    "addressLocality": "Gdynia",
+    "addressCountry": "PL"
+  },
+  "areaServed": "Trójmiasto",
+  "vatID": "874-160-03-93"
+}
+</script>
+<style>
+  /* Home-only hero */
+  .hero{position:relative;min-height:768px;display:flex;align-items:flex-end;overflow:hidden}
+  .hero__bg{position:absolute;inset:0}
+  .hero__bg img{width:100%;height:100%;object-fit:cover;object-position:60% center}
+  .hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(13,15,18,.94) 0%,rgba(13,15,18,.78) 34%,rgba(13,15,18,.28) 62%,rgba(13,15,18,.55) 100%)}
+  .hero__bg::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(transparent 60%,rgba(13,15,18,.9))}
+  .hero .wrap{position:relative;z-index:2;padding-bottom:64px;padding-top:120px;width:100%}
+  .hero .ey{display:inline-flex;align-items:center;gap:12px;margin-bottom:26px}
+  .hero .ey::before{content:"";width:30px;height:1px;background:var(--accent)}
+  .hero__tags li:first-child span{color:var(--accent)}
+  .hero h1{font-size:clamp(54px,9vw,128px);font-weight:600;letter-spacing:-.01em;max-width:13ch;margin-bottom:26px}
+  .hero h1 span{display:block;font-weight:300;color:var(--bone-2)}
+  .hero__lead{font-size:19px;color:var(--bone-2);max-width:46ch;margin-bottom:34px}
+  .hero__cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:42px}
+  .hero__tags{list-style:none;display:flex;gap:0;border-top:1px solid var(--line-2);max-width:760px}
+  .hero__tags li{flex:1;padding:18px 0 0;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--bone-2)}
+  .hero__tags li span{display:block;font-family:var(--disp);font-size:26px;color:var(--bone);letter-spacing:0;margin-top:4px}
+  .scroll{position:absolute;right:38px;bottom:64px;z-index:2;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--bone-3);writing-mode:vertical-rl;text-transform:uppercase}
+  @media(max-width:560px){.hero__tags{flex-direction:column;gap:0}.hero__tags li{border-bottom:1px solid var(--line);padding:14px 0}}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Przejdź do treści</a>
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a class="brand" href="index.html" aria-label="Bezpieczeństwo Twojej Firmy — strona główna">
-        <svg class="brand__mark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" fill="none">
-          <rect x="1.5" y="1.5" width="31" height="31" rx="8" stroke="currentColor" stroke-width="2"/>
-          <path d="M17 8c2.4 2.3 3.6 4.6 3.6 6.9 0 1.2-.5 2.2-1.3 2.9.1-1.3-.4-2.5-1.5-3.6.2 2.3-.8 3.6-2 4.6-1 .9-1.8 1.9-1.8 3.4 0 2.4 2 4.1 4.3 4.1 2.8 0 5-2.2 5-5.3C22.3 16.4 20 11.6 17 8Z" fill="#D7261E"/>
-        </svg>
-        <span class="brand__name">Bezpieczeństwo<br><b>Twojej Firmy</b></span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="primary-nav">
-        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <path d="M3 6h16M3 11h16M3 16h16"/>
-        </svg>
+<a class="skip-link" href="#main">Przejdź do treści</a>
+<header class="site" id="hd">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Bezpieczeństwo Twojej Firmy — strona główna">
+      <span class="mk">B</span>
+      <span class="bn">Bezpieczeństwo <b>Twojej Firmy</b><small>Ochrona ppoż. · BHP</small></span>
+    </a>
+    <nav aria-label="Menu główne"><ul>
+      <li><a href="index.html" aria-current="page">O firmie</a></li>
+      <li><a href="uslugi.html">Usługi</a></li>
+      <li><a href="oferta.html">Oferta</a></li>
+      <li><a href="cennik.html">Cennik</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul></nav>
+    <div class="nav-r">
+      <a class="phone" href="tel:+48504093624">504-093-624</a>
+      <a class="btn btn--sm" href="oferta.html#bezplatny-przeglad">Bezpłatny przegląd</a>
+      <button class="navtoggle" aria-label="Menu" aria-expanded="false" aria-controls="mnav">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h16M3 11h16M3 16h16"/></svg>
       </button>
-      <nav id="primary-nav" class="primary-nav" aria-label="Menu główne">
-        <ul class="primary-nav__list">
-          <li><a href="index.html" aria-current="page">O firmie</a></li>
-          <li><a href="uslugi.html">Usługi</a></li>
-          <li><a href="oferta.html">Oferta</a></li>
-          <li><a href="cennik.html">Cennik</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-          <li class="primary-nav__cta"><a class="btn btn--primary" href="oferta.html#bezplatny-przeglad">Bezpłatny przegląd ppoż.</a></li>
-        </ul>
-      </nav>
-      <div class="header-cta">
-        <a class="header-phone" href="tel:+48504093624">
-          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M3 4c0 7 4 11 11 11l1.5-2.5L12 11l-1.5 1.5C8.7 11.8 6.2 9.3 5.5 7.5L7 6 5.5 3 3 4Z"/>
-          </svg>
-          <span class="header-phone__label">504-093-624</span>
-        </a>
-        <a class="btn btn--primary" href="oferta.html#bezplatny-przeglad">Bezpłatny przegląd</a>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mnav">
+  <ul>
+    <li><a href="index.html" aria-current="page">O firmie</a></li>
+    <li><a href="uslugi.html">Usługi</a></li>
+    <li><a href="oferta.html">Oferta</a></li>
+    <li><a href="cennik.html">Cennik</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a class="btn" href="oferta.html#bezplatny-przeglad">Bezpłatny przegląd ppoż.</a></li>
+  </ul>
+</div>
+
+<main id="main">
+  <section class="hero">
+    <div class="hero__bg"><img src="assets/img/opcja_C.jpg" alt="Gaśnica proszkowa zawieszona na ścianie obok podświetlonego znaku ewakuacyjnego"></div>
+    <div class="wrap">
+      <span class="mono ey">Ochrona ppoż. · BHP · Trójmiasto</span>
+      <h1>Bezpieczeństwo pożarowe Twojej firmy <span>pod kontrolą</span></h1>
+      <p class="hero__lead">Instrukcje, przeglądy gaśnic, szkolenia i nadzór ppoż. dla firm w Gdyni i całym Trójmieście — prowadzone przez inżyniera pożarnictwa, bez korporacyjnej biurokracji.</p>
+      <div class="hero__cta">
+        <a class="btn" href="oferta.html#bezplatny-przeglad">Bezpłatny przegląd ppoż.</a>
+        <a class="btn btn--ghost" href="tel:+48504093624">504-093-624</a>
+      </div>
+      <ul class="hero__tags">
+        <li>Pierwszy przegląd<span>0 zł</span></li>
+        <li>Prowadzi<span>Inżynier</span></li>
+        <li>Na zlecenie<span>Jeden opiekun</span></li>
+      </ul>
+    </div>
+    <span class="scroll">Przewiń ↓</span>
+  </section>
+
+  <section class="logos">
+    <div class="wrap">
+      <span class="mono">Zaufali nam</span>
+      <ul>
+        <li>Galeria Bałtycka</li><li>Bank Pekao S.A.</li><li>Energa</li><li>Carrefour</li>
+        <li>Hydrobudowa</li><li>Quattro Towers</li><li>Arkońska Business Park</li><li>Stocznia MW Gdynia</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="o-firmie"><div class="wrap pad">
+    <div class="sec-head reveal"><span class="no">01</span><span class="ttl">O firmie</span></div>
+    <div class="about reveal">
+      <h2>Inżynierowie pożarnictwa z trójmiejskiego rynku</h2>
+      <div class="body">
+        <p>Nasz zespół skupia młodych i kreatywnych ludzi, posiadających rzetelną wiedzę popartą codzienną pracą zawodową. Dysponujemy <b>wykwalifikowaną kadrą inżynierów</b>, posiadających wieloletnie doświadczenie zawodowe w dziedzinie ochrony przeciwpożarowej.</p>
+        <p>Od wielu lat z powodzeniem rozwiązujemy najtrudniejsze zagadnienia związane z bezpieczeństwem pożarowym budynków oraz obiektów budowlanych. Współpracujemy z wieloma, liczącymi się na trójmiejskim rynku firmami przeciwpożarowymi, dzięki czemu jesteśmy w stanie wykonać każde zlecenie.</p>
+        <p>To co nas wyróżnia to konkurencyjne ceny, dyspozycyjność i szybki czas realizacji oraz fakt, że wszystkie sprawy związane z Państwa firmą prowadzone są bezpośrednio przez jednego pracownika naszej firmy.</p>
       </div>
     </div>
-  </header>
+  </div></section>
 
-  <main id="main">
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <span class="eyebrow">Ochrona ppoż. · BHP · Trójmiasto</span>
-          <h1>Bezpieczeństwo pożarowe Twojej firmy <span class="accent">pod&nbsp;kontrolą</span></h1>
-          <p class="hero__lead">Instrukcje, przeglądy gaśnic, szkolenia i nadzór ppoż. dla firm w Gdyni i całym Trójmieście — prowadzone przez inżyniera pożarnictwa, bez korporacyjnej biurokracji.</p>
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="oferta.html#bezplatny-przeglad">
-              <svg class="btn__ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-              Bezpłatny przegląd ppoż.
-            </a>
-            <a class="btn btn--ghost" href="tel:+48504093624">
-              <svg class="btn__ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5c0 8 5 13 13 13l2-3-4-2-2 2c-2-1-4-3-5-5l2-2-2-4-4 1Z"/></svg>
-              504-093-624
-            </a>
-          </div>
-          <ul class="hero__tags">
-            <li class="is-evac">Pierwszy przegląd — 0&nbsp;zł</li>
-            <li>Inżynier pożarnictwa</li>
-            <li class="is-caution">Jeden opiekun zlecenia</li>
-          </ul>
-        </div>
+  <section id="uslugi"><div class="wrap pad" style="padding-top:0">
+    <div class="sec-head reveal"><span class="no">02</span><span class="ttl">Usługi — czym się zajmujemy</span></div>
+    <div class="rows reveal">
+      <div class="row"><span class="rn">2.1</span><h3>Instrukcje ppoż.</h3><p class="desc">Opracowywanie i aktualizacja instrukcji bezpieczeństwa pożarowego oraz planów ewakuacyjnych obiektu.</p><span class="tag">Dokumentacja</span></div>
+      <div class="row"><span class="rn">2.2</span><h3>Przegląd gaśnic</h3><p class="desc">Przegląd, konserwacja i legalizacja gaśnic oraz innych systemów ppoż. Próby hydrantów.</p><span class="tag">Sprzęt ppoż.</span></div>
+      <div class="row"><span class="rn">2.3</span><h3>Szkolenia BHP</h3><p class="desc">Szkolenia wstępne i okresowe, teoretyczne i praktyczne.</p><span class="tag">Ludzie</span></div>
+      <div class="row"><span class="rn">2.4</span><h3>Analiza i nadzór</h3><p class="desc">Analiza i kontrola bieżącego stanu ochrony ppoż., stały nadzór nad obiektami.</p><span class="tag">Nadzór</span></div>
+      <div class="row"><span class="rn">2.5</span><h3>Znaki i sprzęt</h3><p class="desc">Wyposażanie obiektów w znaki ewakuacyjne oraz podręczny sprzęt gaśniczy.</p><span class="tag">Ewakuacja</span></div>
+    </div>
+    <div style="margin-top:40px" class="reveal"><a class="btn btn--ghost" href="uslugi.html">Zobacz pełny zakres usług →</a></div>
+  </div></section>
 
-        <figure class="hero__media">
-          <img class="hero__img" src="assets/img/hero.jpg" width="1422" height="1106"
-               alt="Inżynier Bezpieczeństwo Twojej Firmy sprawdza gaśnicę proszkową w obiekcie, obok znak ewakuacyjny i szafka hydrantowa">
-        </figure>
+  <section id="dlaczego"><div class="wrap pad" style="padding-top:0">
+    <div class="sec-head reveal"><span class="no">03</span><span class="ttl">Dlaczego BTF</span></div>
+    <div class="about reveal" style="margin-bottom:50px">
+      <h2>Mniej korporacji,<br>więcej konkretu</h2>
+      <div class="body"><p>Wszystkie sprawy Twojej firmy prowadzi bezpośrednio jeden inżynier — bez przekazywania zlecenia między działami i bez czekania w kolejce wielkiej korporacji.</p></div>
+    </div>
+    <div class="cards reveal">
+      <article class="sp2"><span class="tag">// jeden opiekun</span><h3>Bezpośredni kontakt</h3><p>Od pierwszego telefonu po odbiór prac rozmawiasz z jedną osobą, która zna Twój obiekt.</p></article>
+      <article class="sp2"><span class="tag">// dyspozycyjność</span><h3>Szybki czas realizacji</h3><p>Reagujemy bez zbędnej zwłoki — terminy dobieramy pod pracę Twojego obiektu.</p></article>
+      <article class="sp2"><span class="tag">// uczciwa wycena</span><h3>Konkurencyjne ceny</h3><p>Wyceniamy przejrzyście, bez narzutów dużej firmy. Wiesz, za co płacisz.</p></article>
+    </div>
+  </div></section>
+
+  <section id="przeglad"><div class="wrap pad" style="padding-top:0">
+    <div class="sec-head reveal"><span class="no">04</span><span class="ttl">Jak zaczynamy</span></div>
+    <div class="proc reveal">
+      <div class="steps">
+        <div class="st"><span class="n"></span><div><h3>Zgłoszenie</h3><p>Dzwonisz lub piszesz — umawiamy dogodny termin w Twoim obiekcie.</p></div></div>
+        <div class="st"><span class="n"></span><div><h3>Bezpłatny przegląd</h3><p>Sprawdzamy stan ochrony ppoż. na miejscu — bez opłat i zobowiązań.</p></div></div>
+        <div class="st"><span class="n"></span><div><h3>Raport i rekomendacje</h3><p>Dostajesz jasne wnioski i wycenę tego, co warto poprawić.</p></div></div>
       </div>
-    </section>
+      <div class="seal">
+        <span class="lab">Pierwszy przegląd</span>
+        <div class="big">0 zł</div>
+        <div class="free">Bezpłatnie</div>
+        <a class="btn" href="kontakt.html">Umów bezpłatny przegląd</a>
+      </div>
+    </div>
+  </div></section>
+</main>
 
-    <section class="logos">
-      <div class="container">
-        <div class="section__head">
-          <span class="eyebrow">Realizacje</span>
-          <h2>Zaufali nam</h2>
-        </div>
-        <ul class="logos__list">
-          <li>Galeria Bałtycka</li>
-          <li>Bank Pekao S.A.</li>
-          <li>Energa</li>
-          <li>Carrefour</li>
-          <li>Hydrobudowa</li>
-          <li>Quattro Towers</li>
-          <li>Arkońska Business Park</li>
-          <li>Stocznia MW Gdynia</li>
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h2>Bezpieczeństwo<br>Twojej Firmy</h2>
+        <p class="tag">Kamil Skamarski — ochrona przeciwpożarowa i BHP w Trójmieście.</p>
+        <a class="btn" href="oferta.html#bezplatny-przeglad">Bezpłatny przegląd ppoż.</a>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>ul. Kaczewska 22B/8</li><li>81-476 Gdynia</li>
+          <li><a href="tel:+48504093624">504-093-624</a></li>
+          <li><a href="mailto:kamilskamarski@gmail.com">kamilskamarski@gmail.com</a></li>
+          <li><a href="mailto:btf.kontakt@wp.pl">btf.kontakt@wp.pl</a></li>
+          <li>NIP: 874-160-03-93</li><li>REGON: 221870187</li>
         </ul>
       </div>
-    </section>
-
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <span class="eyebrow">O firmie</span>
-          <h2>Inżynierowie pożarnictwa z trójmiejskiego rynku</h2>
-        </div>
-        <div class="prose">
-          <p>Nasz zespół skupia młodych i kreatywnych ludzi, posiadających rzetelną wiedzę popartą codzienną pracą zawodową. Dysponujemy <span class="lead-mark">wykwalifikowaną kadrą inżynierów</span>, posiadających wieloletnie doświadczenie zawodowe w dziedzinie ochrony przeciwpożarowej.</p>
-          <p>Od wielu lat z powodzeniem rozwiązujemy najtrudniejsze zagadnienia związane z bezpieczeństwem pożarowym budynków oraz obiektów budowlanych. Współpracujemy z wieloma, liczącymi się na trójmiejskim rynku firmami przeciwpożarowymi, dzięki czemu jesteśmy w stanie wykonać każde zlecenie.</p>
-          <p>To co nas wyróżnia to konkurencyjne ceny, dyspozycyjność i szybki czas realizacji oraz fakt, że wszystkie sprawy związane z Państwa firmą prowadzone są bezpośrednio przez jednego pracownika naszej firmy.</p>
-        </div>
+      <div>
+        <h3>Nawigacja</h3>
+        <ul>
+          <li><a href="index.html">O firmie</a></li><li><a href="uslugi.html">Usługi</a></li>
+          <li><a href="oferta.html">Oferta</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
       </div>
-    </section>
-
-    <section class="section" id="uslugi-teaser">
-      <div class="container">
-        <div class="section__head">
-          <span class="eyebrow">Usługi</span>
-          <h2>Czym się zajmujemy</h2>
-          <p>Pełen zakres ochrony przeciwpożarowej i BHP — od dokumentacji po przeglądy gaśnic i szkolenia.</p>
-        </div>
-        <div class="bento">
-          <article class="card card--feature">
-            <span class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
-            </span>
-            <span class="card__tag">Dokumentacja</span>
-            <h3>Instrukcje bezpieczeństwa pożarowego</h3>
-            <p>Opracowywanie i aktualizacja instrukcji bezpieczeństwa pożarowego oraz planów ewakuacyjnych obiektu.</p>
-          </article>
-          <article class="card card--wide">
-            <span class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9a3 3 0 0 1 6 0v1h-6Z"/><path d="M8 10h8v9a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2Z"/><path d="M12 6V4M12 4h3"/></svg>
-            </span>
-            <span class="card__tag">Sprzęt ppoż.</span>
-            <h3>Przegląd i legalizacja gaśnic</h3>
-            <p>Przegląd, konserwacja i legalizacja gaśnic oraz innych systemów ppoż. Próby hydrantów.</p>
-          </article>
-          <article class="card">
-            <span class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.2"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M18 8h4M20 6v4"/></svg>
-            </span>
-            <span class="card__tag">Ludzie</span>
-            <h3>Szkolenia BHP i ppoż.</h3>
-            <p>Szkolenia wstępne i okresowe, teoretyczne i praktyczne.</p>
-          </article>
-          <article class="card">
-            <span class="card__icon card__icon--caution" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </span>
-            <span class="card__tag">Nadzór</span>
-            <h3>Analiza i nadzór ppoż.</h3>
-            <p>Analiza i kontrola bieżącego stanu ochrony ppoż., stały nadzór nad obiektami.</p>
-          </article>
-          <article class="card">
-            <span class="card__icon card__icon--evac" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="5" r="2"/><path d="M11 8 8 11l3 2 1 6M11 8l4 2 1 4"/><path d="M19 6v12M19 6h-4"/></svg>
-            </span>
-            <span class="card__tag">Ewakuacja</span>
-            <h3>Znaki i sprzęt gaśniczy</h3>
-            <p>Wyposażanie obiektów w znaki ewakuacyjne oraz podręczny sprzęt gaśniczy.</p>
-          </article>
-        </div>
-        <p style="margin-top: var(--space-l)">
-          <a class="btn btn--ghost" href="uslugi.html">Zobacz pełny zakres usług</a>
-        </p>
-      </div>
-    </section>
-
-    <section class="band--carbon">
-      <div class="tape-rule" aria-hidden="true"></div>
-      <div class="container band__inner">
-        <span class="eyebrow eyebrow--on-carbon">Dlaczego BTF</span>
-        <h2>Mniej korporacji, więcej konkretu</h2>
-        <p class="band__intro">Wszystkie sprawy Twojej firmy prowadzi bezpośrednio jeden inżynier — bez przekazywania zlecenia między działami i bez czekania w kolejce wielkiej korporacji.</p>
-
-        <div class="why-grid">
-          <article class="why-card">
-            <span class="why-card__k">// jeden opiekun</span>
-            <h3>Bezpośredni kontakt</h3>
-            <p>Od pierwszego telefonu po odbiór prac rozmawiasz z jedną osobą, która zna Twój obiekt.</p>
-          </article>
-          <article class="why-card">
-            <span class="why-card__k">// dyspozycyjność</span>
-            <h3>Szybki czas realizacji</h3>
-            <p>Reagujemy bez zbędnej zwłoki — terminy dobieramy pod pracę Twojego obiektu.</p>
-          </article>
-          <article class="why-card">
-            <span class="why-card__k">// uczciwa wycena</span>
-            <h3>Konkurencyjne ceny</h3>
-            <p>Wyceniamy przejrzyście, bez narzutów dużej firmy. Wiesz, za co płacisz.</p>
-          </article>
-        </div>
-
-        <div class="steps-wrap">
-          <div>
-            <span class="eyebrow eyebrow--on-carbon">Jak zaczynamy</span>
-            <ol class="steps">
-              <li class="step"><span class="step__num" aria-hidden="true"></span><div><h3>Zgłoszenie</h3><p>Dzwonisz lub piszesz — umawiamy dogodny termin w Twoim obiekcie.</p></div></li>
-              <li class="step"><span class="step__num" aria-hidden="true"></span><div><h3>Bezpłatny przegląd</h3><p>Sprawdzamy stan ochrony ppoż. na miejscu — bez opłat i zobowiązań.</p></div></li>
-              <li class="step"><span class="step__num" aria-hidden="true"></span><div><h3>Raport i rekomendacje</h3><p>Dostajesz jasne wnioski i wycenę tego, co warto poprawić.</p></div></li>
-            </ol>
-          </div>
-          <div class="seal-card">
-            <svg class="seal" viewBox="0 0 200 200" role="img" aria-label="Pieczęć: pierwszy przegląd ppoż. bezpłatnie" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="100" r="92" fill="none" stroke="#D7261E" stroke-width="3"/>
-              <circle cx="100" cy="100" r="80" fill="none" stroke="#D7261E" stroke-width="2" stroke-dasharray="3 7"/>
-              <text x="100" y="58" text-anchor="middle" fill="#E7EBF0" font-family="'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="0.12em">PIERWSZY PRZEGLĄD</text>
-              <text x="100" y="120" text-anchor="middle" fill="#FFFFFF" font-family="'Archivo', sans-serif" font-size="58" font-weight="900">0 zł</text>
-              <text x="100" y="150" text-anchor="middle" fill="#F2B705" font-family="'IBM Plex Mono', monospace" font-size="14" font-weight="600" letter-spacing="0.22em">BEZPŁATNIE</text>
-            </svg>
-            <a class="btn btn--primary" href="oferta.html#bezplatny-przeglad">Umów bezpłatny przegląd</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h2>BEZPIECZEŃSTWO TWOJEJ FIRMY</h2>
-          <p class="footer-tagline">Kamil Skamarski — ochrona przeciwpożarowa i BHP w Trójmieście.</p>
-          <p class="footer-cta">
-            <a class="btn btn--primary" href="oferta.html#bezplatny-przeglad">Bezpłatny przegląd ppoż.</a>
-          </p>
-        </div>
-        <div>
-          <h3>Kontakt</h3>
-          <ul class="footer-list">
-            <li>ul. Kaczewska 22B/8</li>
-            <li>81-476 Gdynia</li>
-            <li><a href="tel:+48504093624">504-093-624</a></li>
-            <li><a href="mailto:kamilskamarski@gmail.com">kamilskamarski@gmail.com</a></li>
-            <li><a href="mailto:btf.kontakt@wp.pl">btf.kontakt@wp.pl</a></li>
-            <li>NIP: 874-160-03-93</li>
-            <li>REGON: 221870187</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Nawigacja</h3>
-          <ul class="footer-list">
-            <li><a href="index.html">O firmie</a></li>
-            <li><a href="uslugi.html">Usługi</a></li>
-            <li><a href="oferta.html">Oferta</a></li>
-            <li><a href="cennik.html">Cennik</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-          </ul>
-        </div>
-      </div>
-      <p class="footer-meta">© 2026 Bezpieczeństwo Twojej Firmy — Kamil Skamarski. Wszelkie prawa zastrzeżone. <a href="polityka-prywatnosci.html">Polityka prywatności</a> · <button type="button" class="footer-cookie-link" data-cookie-settings>Ustawienia cookies</button></p>
     </div>
-  </footer>
-  <script src="assets/js/nav.js" defer></script>
-  <script src="assets/js/consent.js" defer></script>
+    <p class="fmeta"><span>© 2026 Bezpieczeństwo Twojej Firmy — Kamil Skamarski. Wszelkie prawa zastrzeżone.</span><span><a href="polityka-prywatnosci.html">Polityka prywatności</a> · <button type="button" data-cookie-settings>Ustawienia cookies</button></span></p>
+  </div>
+</footer>
+<script src="assets/js/carbon-nav.js" defer></script>
+<script src="assets/js/consent.js" defer></script>
 </body>
 </html>
