@@ -127,14 +127,15 @@ section{position:relative}
 .about .body b{color:var(--bone);font-weight:500}
 @media(max-width:840px){.about{grid-template-columns:1fr;gap:26px}}
 
-.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--line)}
+.split>*{min-width:0}
 .split .media{position:relative;overflow:hidden;background:var(--bg-2);min-height:420px}
 .split .media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .split .panel{padding:54px 46px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--line)}
 .split .panel h2{font-size:clamp(24px,2.6vw,34px);font-weight:500;letter-spacing:0;text-transform:none;line-height:1.12;margin-bottom:20px}
 .split .panel p{color:var(--bone-2);margin-bottom:16px}
 .split .panel .free{color:var(--bone);font-weight:500;border-bottom:2px solid var(--accent)}
-@media(max-width:820px){.split{grid-template-columns:1fr}.split .media{min-height:300px;position:relative}.split .media img{position:absolute}.split .panel{border-left:none;border-top:1px solid var(--line)}}
+@media(max-width:820px){.split{grid-template-columns:minmax(0,1fr)}.split .media{min-height:300px;position:relative}.split .media img{position:absolute}.split .panel{border-left:none;border-top:1px solid var(--line)}}
 
 /* ---- Service rows (list style) ---- */
 .rows{border-top:1px solid var(--line)}
@@ -219,6 +220,14 @@ section{position:relative}
 .contact-card dd{color:var(--bone);font-size:16px;line-height:1.5}
 .contact-card dd a:hover{border-bottom:1px solid var(--bone-2)}
 @media(max-width:820px){.contact-card{border-left:none;border-top:1px solid var(--line)}}
+/* mobile: stack label/value so long emails don't overflow the card */
+@media(max-width:560px){
+  .contact-card{padding:34px 24px}
+  .contact-card dl{grid-template-columns:1fr;gap:3px 0;margin:26px 0}
+  .contact-card dt{margin-top:12px}
+  .contact-card dd{overflow-wrap:anywhere}
+  .contact-card dt:first-of-type{margin-top:0}
+}
 
 /* ---- Map ---- */
 .map{border:1px solid var(--line);background:var(--bg-2);aspect-ratio:21/8;display:grid;place-items:center;text-align:center;padding:30px;margin-top:64px}
