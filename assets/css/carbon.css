@@ -86,8 +86,8 @@ header.site.solid,header.site.always{background:color-mix(in srgb,var(--bg) 82%,
 
 /* ---- Generic section scaffold ---- */
 section{position:relative}
-.pad{padding:96px 0}
-.pad-s{padding:64px 0}
+.pad{padding-block:96px}      /* vertical only — keep .wrap's horizontal padding */
+.pad-s{padding-block:64px}
 .sec-head{display:flex;align-items:center;gap:18px;padding:22px 0;border-bottom:1px solid var(--line);margin-bottom:54px}
 .sec-head .no{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:.18em}
 .sec-head .ttl{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.2em;color:var(--bone-2)}
